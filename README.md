@@ -8,5 +8,5 @@ Se debe instalar el módulo `prettytable` a través del comando `pip install -r 
 
 Ejemplo de la salida en pantalla de los resultados.
 
-![Ejemplo de salida](imagenes/ejemplo_salida.png)
+![Ejemplo de salida](/imagenes/ejemplo_salida.png)
 
