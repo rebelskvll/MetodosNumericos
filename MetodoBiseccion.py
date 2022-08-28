@@ -13,24 +13,26 @@ def f(x):
     return 10*x**4-3*x*exp(x)-3*exp(x)
 
 #Función que calcula las iteraciones 
-def biseccion(f, a, b, tol, n):
+def biseccion(f, punto_a, punto_b, tolerancia, iteraciones_evaluar):
 
     iteraciones=1
-    while iteraciones < n:
-        p=a+(b-a)/2.0
-        print("Iteración", "%03d" % iteraciones , "; p=", "%.14f" %p)
-        if abs(f(p))<=1e-15 or (b-a)/2.0<tol:
+    while iteraciones <= iteraciones_evaluar:
+        p=punto_a+(punto_b-punto_a)/2.0
+        print("Iteración", "%03d" % iteraciones, ": p=", "%.14f" %p)
+        if abs(f(p)) <= 1e-15 or (punto_b - punto_a)/2.0 < tolerancia:
             return p
         iteraciones += 1
-        if f(a)*f(p) > 0:
-            a=p
+        if f(punto_a) * f(p) > 0:
+            punto_a=p
         else:
-            b=p
+            punto_b=p
     print("Interacciones agotadas: Error")
     return
-print("\n"+r"Metodo de la Biseccion:"+"\n")
 
 
+
+
+print("\n"+r"Metodo de la Bisección:"+"\n")
 """
 Llama a la función bisección y le pasa como parámetros:
 - La función a evaluar
@@ -38,4 +40,4 @@ Llama a la función bisección y le pasa como parámetros:
 - La tolerancia a error
 - El número de itereaciones donde se quiere detener el proceso
 """
-biseccion(f,-1.0, -0.25, 1e-4, 100)
+biseccion(f,-1.0, -0.25, 1e-4, 13)
