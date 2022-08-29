@@ -1,1 +1,2 @@
 prettytable >= 3.4.0
+sympy == 1.11

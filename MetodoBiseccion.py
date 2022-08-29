@@ -12,7 +12,7 @@ from prettytable import PrettyTable
 resultados = PrettyTable(["Iteración","p"])
 
 #Acá se define la función a evaluar, recibe como parámetro X
-def f(x):
+def funcion(x):
 
     return 10*x**4-3*x*exp(x)-3*exp(x)
 
@@ -20,7 +20,7 @@ def f(x):
 Función que calcula p, se detiene al momento de que x es menor a la tolerancia 
 o al llegar al número de iteraciones a evaluar
 """
-def biseccion(f, punto_a, punto_b, tolerancia, iteraciones_evaluar):
+def biseccion(funcion, punto_a, punto_b, tolerancia, iteraciones_evaluar):
 
     iteraciones=1
     while iteraciones <= iteraciones_evaluar:
@@ -31,10 +31,10 @@ def biseccion(f, punto_a, punto_b, tolerancia, iteraciones_evaluar):
         se hace el cálculo
         """
         resultados.add_row(["%03d" % iteraciones,"%.14f" % p])
-        if abs(f(p)) <= 1e-15 or (punto_b - punto_a)/2.0 < tolerancia:
+        if abs(funcion(p)) <= 1e-15 or (punto_b - punto_a)/2.0 < tolerancia:
             return p
 
-        if f(punto_a) * f(p) > 0:
+        if funcion(punto_a) * funcion(p) > 0:
             punto_a=p
         else:
             punto_b=p
@@ -53,6 +53,6 @@ Llama a la función bisección y le pasa como parámetros:
 - La tolerancia a error
 - El número de itereaciones donde se quiere detener el proceso
 """
-biseccion(f,-1.0, -0.25, 1e-4, 100)
+biseccion(funcion,-1.0, -0.25, 1e-4, 100)
 #Imprime la tabla con los valores calculados
 print (resultados)
