@@ -28,9 +28,9 @@ parece más acertado iniciar en 0
 """
 def newton(funcion, derivada, p0, tolerancia, maximo_iteraciones):
 
-    iteraciones=0
+    iteraciones=1
 
-    while iteraciones < maximo_iteraciones:
+    while iteraciones <= maximo_iteraciones:
 
         p = p0 - funcion(p0)/derivada(p0)
         if abs(p-p0) < tolerancia:
@@ -50,7 +50,7 @@ Llama a la función de newton y le pasa como parámetros:
 - La tolerancia a error
 - El número de itereaciones donde se quiere detener el proceso
 """
-newton(funcion, derivada, -2.5, 1e-10, 100)
+newton(funcion, derivada, 1, 1e-10, 100)
 
 #Imprime la tabla con los valores calculados
 print (resultados)

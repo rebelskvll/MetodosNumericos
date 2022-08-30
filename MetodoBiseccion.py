@@ -20,10 +20,10 @@ def funcion(x):
 Función que calcula p, se detiene al momento de que x es menor a la tolerancia 
 o al llegar al número de iteraciones a evaluar
 """
-def biseccion(funcion, punto_a, punto_b, tolerancia, iteraciones_evaluar):
+def biseccion(funcion, punto_a, punto_b, tolerancia, maximo_iteraciones):
 
     iteraciones=1
-    while iteraciones <= iteraciones_evaluar:
+    while iteraciones <= maximo_iteraciones:
 
         p=punto_a+(punto_b-punto_a)/2.0
         """
