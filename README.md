@@ -12,4 +12,4 @@ Ejemplo de la salida en pantalla de los resultados.
 
 ![Ejemplo de salida](/imagenes/ejemplo_salida.png)
 
-- El módulo `sympy` es usado para encontrar la derivada de la función a evaluar en el método de Newton, aún no está confirmado que sea exacto, por lo cual se recomienda hallar la derivada de forma manual para evitar errores . 
+- El módulo `sympy` es usado para encontrar la derivada de la función a evaluar en el método de Newton, aún no está confirmado que sea exacto, por lo cual se recomienda hallar la derivada de forma manual para evitar errores. 
