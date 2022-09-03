@@ -11,12 +11,12 @@ from prettytable import PrettyTable
 # Acá se define la función a evaluar
 def funcion(x):
 
-    return x**5-3*x**4+10*x-8
-
+    return 2*sin(x)**2-3*cos(x)
+     
 # Derivada de la función a evaluar
 def derivada(x):
 
-    return 5*x**4-12*x**3+10
+    return 4*sin(x)*cos(x) + 3*sin(x)
 
 # Se declara la tabla de forma global
 resultados = PrettyTable(["Iteración","p"])
@@ -51,7 +51,7 @@ Llama a la función de newton y le pasa como parámetros:
 - La tolerancia a error
 - El número de itereaciones donde se quiere detener el proceso
 """
-newton(funcion, derivada, 3, 1e-10, 100)
+newton(funcion, derivada, 5, 1e-10, 100)
 
 #Imprime la tabla con los valores calculados
 print (resultados)

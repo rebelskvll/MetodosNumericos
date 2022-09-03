@@ -12,10 +12,11 @@ Código tomado de https://www.delftstack.com/es/howto/python/python-derivative/
 """
 
 
-from sympy import Symbol
+from sympy import *
 
 x = Symbol('x')
-y = (2*x + 1)*(x**3 + 2)
+y = (2**-x) -x
 
 yprime = y.diff(x)
 print(yprime)
+
