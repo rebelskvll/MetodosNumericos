@@ -35,7 +35,7 @@ def NewtonPol(datos):
 
     for i in range (1, n+1):
         for j in range (1, i+1):
-            F[i][j] = round((F[i][j-1]-F[i-1][j-1]) / (datos[i][0] - datos [i-j][0]),4)
+            F[i][j] = (F[i][j-1]-F[i-1][j-1]) / (datos[i][0] - datos [i-j][0])
             
     def L(k, x):
         out = 1.0
