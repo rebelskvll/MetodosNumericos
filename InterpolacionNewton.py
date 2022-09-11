@@ -1,12 +1,25 @@
 #!/usr/bin/python3
 
 from math import *
+from turtle import st
 from prettytable import PrettyTable
 import csv
 
-
+"""
+Aquí se define la tabla de manera global para poder modificarla en diferentes
+partes del script 
+"""
 tabla_resultados = PrettyTable()
 columnas = []
+
+
+def extraerCoeficientes(datost):
+
+    tabla_coeficientes = PrettyTable(["Coeficiente","Valor"])
+    for i in range (len(datost)):
+        tabla_coeficientes.add_row([f"Coeficiente {i}", "%.4f" % datost[i][i]])
+
+    return tabla_coeficientes
 
 def NewtonPol(datos):
     n = len(datos) - 1
@@ -22,7 +35,7 @@ def NewtonPol(datos):
 
     for i in range (1, n+1):
         for j in range (1, i+1):
-            F[i][j] = (F[i][j-1]-F[i-1][j-1]) / (datos[i][0] - datos [i-j][0])
+            F[i][j] = round((F[i][j-1]-F[i-1][j-1]) / (datos[i][0] - datos [i-j][0]),4)
             
     def L(k, x):
         out = 1.0
@@ -56,15 +69,22 @@ print(datost)
 
 T, P = NewtonPol(datost)
 
+
+
 print ("Tabla de diferencias divididas:" + "\n")
 
+# Se recorre toda la lista de tuplas que se generó para crear la tabla. 
 for i in range (len(T)):
+    # Se crean los nombres de las columnas
     columnas.append(f"Diferencia {i}")
+    # Se agregan las filas a la tabla
     tabla_resultados.add_row(T[i])
 
+# Finalmente se agregan los nombres de las columnas
 tabla_resultados.field_names = columnas
 
 print(tabla_resultados)
+print (extraerCoeficientes(T))
 #Esto no es relevante por el momento
 #print("Polinomio en x=10")
 #print(P(10.0))
