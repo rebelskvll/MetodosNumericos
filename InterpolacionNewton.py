@@ -85,6 +85,10 @@ tabla_resultados.field_names = columnas
 
 print(tabla_resultados)
 print (extraerCoeficientes(T))
-#Esto no es relevante por el momento
-#print("Polinomio en x=10")
-#print(P(10.0))
+
+#Para analizar los puntos entre 0 y 5 minutos
+x = 0.0
+for i in range (26):
+    # Se recorren los 5 segundos
+    print(f"polinomio en {round(x, 1)}: {round(P(x), 4)}")
+    x = x + 0.2
