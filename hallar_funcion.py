@@ -1,4 +1,4 @@
-from sympy import *
+from sympy import Symbol, poly_from_expr
 
 a0 = 4.5445
 a1 = 7.7084
@@ -14,7 +14,9 @@ x4 = 4.6
 x5 = 5
 x = Symbol('x')
 
-print (poly_from_expr(a0 + a1*(x-x0) 
-+ a2*(x-x0)*(x-x1) 
-+ a3*(x-x0)*(x-x1)*(x-x2) 
-+ a4*(x-x0)*(x-x1)*(x-x2)*(x-x3)))
+print (poly_from_expr(a0 + a1*(x-x0) + 
+a2 * (x-x0) * (x - x1) + 
+a3 * (x-x0) * (x - x1) * (x - x2) +
+a4 * (x-x0) * (x - x1) * (x - x2) * (x - x3) +
+a5 * (x-x0) * (x - x1) * (x - x2) * (x - x3) * (x - x4)
+))
