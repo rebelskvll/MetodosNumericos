@@ -7,7 +7,7 @@ Estos scripts han sido tomados de las lecturas fundamentales y el libro `Método
 
 Se creó un módulo llamado `cargarDatos.py`, el cual se usan en varios scripts, para darle un manejo un poco más simple al momento de cargar coordenadas del tipo (x,y). Dentro del archivo `datos.csv` se debe ingresar las coordenadas separadas por comas y cada coordenada debe ocupar una línea. Por ejemplo, para las coordenadas (5.4, 2) y (1, 3) el archivo debe lucir así:
 
-5.4,2
+5.4,2  
 1,3
 
 # Requerimientos
