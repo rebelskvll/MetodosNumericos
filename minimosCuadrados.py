@@ -24,8 +24,9 @@ def RectaMinSq(datos):
     a0 = (Y*XX - X*XY)/(m*XX - X**2)
     a1 = (m*XY - X*Y)/(m*XX - X**2)
     x = Symbol('x')
-
-    return poly_from_expr(a0 + a1*x)
+    ecuacion = a0 + a1*x
+    
+    return poly_from_expr(ecuacion)
 
 def main():  
     datos = cd.cargarDatos()
