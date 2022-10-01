@@ -31,7 +31,7 @@ def RectaMinSq(datos):
 def main():  
     datos = cd.cargarDatos()
     f = RectaMinSq(datos)
-    print (f)
+    print (f[0].args)
 
 if __name__ == '__main__':
     main()

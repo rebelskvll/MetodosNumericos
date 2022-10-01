@@ -1,9 +1,8 @@
 #!/usr/bin/python3
 
 from math import *
-from turtle import st
 from prettytable import PrettyTable
-import csv
+import cargarDatos as cd
 
 """
 Aquí se define la tabla de manera global para poder modificarla en diferentes
@@ -23,15 +22,10 @@ def extraerCoeficientes(datost):
 
 def NewtonPol(datos):
     n = len(datos) - 1
-    
-    
-
     F = [[0 for x in datos] for x in datos]
-
 
     for i, p in enumerate(datos):
         F[i][0] = p[1]
-
 
     for i in range (1, n+1):
         for j in range (1, i+1):
@@ -56,20 +50,10 @@ def NewtonPol(datos):
 Se crea esta función para cargar los datos desde el archivo
 'interpolacion_newton.csv', que debe tener los valores separados por comas
 """
-datost = []
-with open('interpolacion_newton.csv') as file:
-   reader = csv.reader(file)
-   """
-   Al cargar los datos desde el csv, estos se leen como tuplas de tipo string,
-   con esta línea, se crean las tuplas tipo float.
-   """
-   datost = [(float(row[0]), float(row[1])) for row in reader]
+datost = cd.cargarDatos()
 print(datost)
 
-
 T, P = NewtonPol(datost)
-
-
 
 print ("Tabla de diferencias divididas:" + "\n")
 
